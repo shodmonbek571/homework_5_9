@@ -15,4 +15,28 @@ function createRow(phone, index) {
 </tr>
     `
 }
-export {createRow};
+function validate(name, price) {
+    if (name.value.trim().length <= 3) {
+      alert("name is not a number");
+      name.focus();
+      return false;
+    }
+  
+    if (!price.value) {
+      alert("price is not a string");
+      price.focus();
+      return false;
+    }
+  
+    if (price.value < 0) {
+      alert("0 dan katta bolishi kerak");
+      price.focus();
+      return false;
+    }
+  
+    return true;
+  }
+  
+  export { createRow, validate };
+  
+
